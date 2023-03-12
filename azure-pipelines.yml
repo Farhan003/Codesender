@@ -41,10 +41,10 @@ steps:
   displayName: 'Publish'
   inputs:
     command: 'publish'
-    publishWebProjects: false
+    publishWebProjects: true
     projects: '$(project)'
-    arguments: '-- configuration $(BuildConfiguration) --output $(BuildArtifactStagingDirectory)'
-    zipAfterPublish: false
+    arguments: '-- configuration $(BuildConfiguration) -- output $(BuildArtifactStagingDirectory)'
+    zipAfterPublish: true
 
 
 - task: PublishBuildArtifacts@1
