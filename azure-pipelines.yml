@@ -41,16 +41,16 @@ steps:
   displayName: 'Publish'
   inputs:
     command: 'publish'
-    publishWebProjects: true
+    publishWebProjects: false
     projects: '$(project)'
     arguments: '-- configuration $(BuildConfiguration) -- output $(BuildArtifactStagingDirectory)'
-    zipAfterPublish: true
+    zipAfterPublish: false
 
 
 - task: PublishBuildArtifacts@1
   name: 'PublishBuildArtifacts'
   displayName: 'Publish Build Artifacts'
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: '$(BuildArtifactStagingDirectory)'
     ArtifactName: 'AzureTestProject'
     publishLocation: 'Container'
