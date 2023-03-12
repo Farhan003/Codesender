@@ -12,6 +12,8 @@ pool:
 variables:
     buildplatform: 'any-cpu'
     buildconfiguartion: 'Release'
+    solution: '**/RoundTheCode.AzureTestProject.sln'
+    project: '**/RoundTheCode.AzureTestProject.csproj'
     
 
 steps:
