@@ -47,10 +47,8 @@ steps:
     zipAfterPublish: false
 
 
-- task: PublishBuildArtifacts@1
-  name: 'PublishBuildArtifacts'
-  displayName: 'Publish Build Artifacts'
+steps:
+- task: PublishPipelineArtifact@1
   inputs:
-    PathtoPublish: '$(BuildArtifactStagingDirectory)'
-    ArtifactName: 'AzureTestProject'
-    publishLocation: 'Container'
+    targetPath: $(System.DefaultWorkingDirectory)/bin/WebApp
+    artifactName: WebApp
